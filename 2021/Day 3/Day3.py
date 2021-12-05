@@ -1,5 +1,4 @@
 import os
-from typing import Sized
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
@@ -89,9 +88,7 @@ def part2(lines):
         if line[0] == '1':
             onelist.append(line)
         else:
-            zerolist.append(line)
-
-    #print(size, len(lines), len(onelist), len(zerolist))        
+            zerolist.append(line)       
 
     if len(onelist) > len(zerolist):
         o2list = onelist
@@ -101,17 +98,14 @@ def part2(lines):
         o2list = zerolist
     
     for i in range(1, size):
-        #print(i)
         o2list = o2filter(i, o2list)
         co2list = co2filter(i, co2list)
 
-    #print(o2, co2)
-    
     o2 = int(o2list[0], 2)
     co2 = int(co2list[0], 2)
     print(o2*co2)
 
 if __name__ == "__main__":
     lines = open(r"input.txt").read().splitlines()
-    #part1(lines)
+    part1(lines)
     part2(lines)
