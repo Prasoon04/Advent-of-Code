@@ -1,3 +1,7 @@
+import os
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
 
 def part1(lines):
     x = 0
@@ -34,7 +38,7 @@ def part2(lines):
 
 
 if __name__ == "__main__":
-    lines = open(r"C:\Users\pgaut\Desktop\Advent of Code 2021\Day 2\input.txt").read().splitlines()
+    lines = open(r"input.txt").read().splitlines()
     part1(lines)
     part2(lines)
 
